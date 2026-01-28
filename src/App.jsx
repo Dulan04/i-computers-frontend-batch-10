@@ -1,11 +1,18 @@
-import UserData from "./components/userData";
-import OnSale from "./components/onSales";
+import { Route, Routes } from "react-router-dom"
+import AdminPage from "../pages/admin"
+import HomePage from "../pages/home"
+import LoginPage from "../pages/login"
+
 function App() {
   
   return (
-    <div className="bg-red-400 border-8 border-amber-100 ">
-    <UserData/>
-     <OnSale/>
+    <div className="w-full h-screen">
+      <Routes>
+        <Route path = "/" element = {<HomePage/>}/>
+        <Route path = "/admin/*" element = {<AdminPage/>}/>
+        <Route path = "/login" element = {<LoginPage/>}/>
+      </Routes>
+
     </div>
   )
 }
